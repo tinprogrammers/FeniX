@@ -8,7 +8,7 @@ setup(
     description="A blazing fast and minimal Python full-stack web framework",
     long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/tinprogrammers/fenix",
+    url="https://github.com/tinprogrammers/FeniX",
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
