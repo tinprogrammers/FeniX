@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+setup.py
+fenix/__init__.py
+fenix/core.py
+fenix.egg-info/PKG-INFO
+fenix.egg-info/SOURCES.txt
+fenix.egg-info/dependency_links.txt
+fenix.egg-info/top_level.txt
