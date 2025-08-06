@@ -25,7 +25,7 @@ myApp/
 ## Quick Start
 
 ```bash
-pip install fenix
+pip install pyfenix
 ```
 
 ## 📜 FeniX CLI Commands
