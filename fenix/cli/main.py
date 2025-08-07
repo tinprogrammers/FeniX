@@ -1,22 +1,36 @@
-# fenix/cli/main.py
-
 import sys
+import time
 from rich.console import Console
 from rich.panel import Panel
 
 from fenix import __version__
-from fenix.cli.commands import make, run, version,help as help_cmd
+from fenix.cli.commands import make, run, version, help as help_cmd
 
 console = Console()
 
+def typing(text: str, delay: float = 0.02, style="white"):
+    for char in text:
+        console.print(char, end="", style=style, soft_wrap=True)
+        time.sleep(delay)
+    print()
+
+ASCII_LOGO = '''
+███████ ███████ ███    ██ ██ ██   ██ 
+██      ██      ████   ██ ██  ██ ██  
+█████   █████   ██ ██  ██ ██   ███  
+██      ██      ██  ██ ██ ██  ██ ██ 
+██      ███████ ██   ████ ██ ██   ██ 
+'''
+
 def welcome():
     console.print(Panel.fit(
-        "[bold cyan]🚀 Welcome to FeniX Framework![/bold cyan]\n"
-        "[green]Fast. Minimal. Future Ready.[/green]\n"
-        "Type: [yellow]fx --help[/yellow] for commands",
+        f"[bold blue]{ASCII_LOGO}[/bold blue]",
         title="[bold red]FeniX CLI[/bold red]",
-        border_style="blue"
+        border_style="bright_magenta"
     ))
+    typing("🚀 Welcome to FeniX Framework!", 0.04, "bold cyan")
+    typing("⚡ Fast. Minimal. Future Ready.", 0.03, "green")
+    typing("👉 Type: fx --help to get started", 0.02, "yellow")
 
 def main():
     if len(sys.argv) == 1:
@@ -33,7 +47,8 @@ def main():
             make.create()
         else:
             console.print("[bold red]Usage: fx make project[/bold red]")
-    elif command=="help":
+
+    elif command == "help":
         help_cmd.run()
 
     elif command == "server":
