@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="pyfenix",
-    version="0.1.3.1",
+    version="0.1.4",
     author="Azeem Teli",
     author_email="tinprogrammers@gmail.com",
     description="A blazing fast and minimal Python full-stack web framework",
